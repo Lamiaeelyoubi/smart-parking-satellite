@@ -53,3 +53,16 @@ Real-time parking status successfully transmitted via satellite and decoded in N
 - Mobile application
 - Multi-parking support
 - Energy optimization
+- ---
+
+## Payload Optimization
+
+To ensure reliable satellite transmission, we optimized the payload.
+
+Instead of sending a full JSON string, we send 3 hexadecimal bytes:
+
+- Byte 0 → Number of vehicles
+- Byte 1 → Remaining spaces
+- Byte 2 → Parking status (0 = FREE, 1 = AVAILABLE, 2 = FULL)
+
+This reduces payload size and improves transmission reliability.
